@@ -24,6 +24,33 @@ def init_db():
 
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('schema.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('insert_animaux.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('insert_animaux_velages.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+    
+    with current_app.open_resource('insert_complications.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('insert_familles.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('insert_types.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+    with current_app.open_resource('insert_velages.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+
+    with current_app.open_resource('insert_velages_complications.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+    
+    with current_app.open_resource('insert_animaux_types.sql') as f:
+        db.executescript(f.read().decode('utf8'))
 
 
 @click.command('init-db')
